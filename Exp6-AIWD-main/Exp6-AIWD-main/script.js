@@ -114,12 +114,19 @@ document.addEventListener('DOMContentLoaded', function(){
             }
             
             if(valid) {
-                // Success - use textContent to prevent XSS
-                const successText = document.createElement('div');
-                successText.innerHTML = "✅ Registration Successful!<br>Welcome, <strong></strong>!";
-                const strongElement = successText.querySelector('strong');
-                strongElement.textContent = name;
-                messageDiv.innerHTML = successText.innerHTML;
+                // Success - use DOM methods to prevent XSS
+                messageDiv.textContent = ''; // Clear previous content
+                
+                // Create and append text nodes and elements safely
+                messageDiv.appendChild(document.createTextNode('✅ Registration Successful!'));
+                messageDiv.appendChild(document.createElement('br'));
+                messageDiv.appendChild(document.createTextNode('Welcome, '));
+                
+                const strongElement = document.createElement('strong');
+                strongElement.textContent = name; // Safe: textContent auto-escapes
+                messageDiv.appendChild(strongElement);
+                
+                messageDiv.appendChild(document.createTextNode('!'));
                 messageDiv.className = "success";
                 
                 submitBtn.disabled = true;
@@ -129,8 +136,17 @@ document.addEventListener('DOMContentLoaded', function(){
                 messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             else {
-                // Show errors
-                messageDiv.innerHTML = "❌ Please fix the following errors:<br>• " + errorMessages.join("<br>• ");
+                // Show errors - build DOM safely
+                messageDiv.textContent = ''; // Clear previous content
+                
+                messageDiv.appendChild(document.createTextNode('❌ Please fix the following errors:'));
+                messageDiv.appendChild(document.createElement('br'));
+                
+                errorMessages.forEach(function(error) {
+                    messageDiv.appendChild(document.createTextNode('• ' + error));
+                    messageDiv.appendChild(document.createElement('br'));
+                });
+                
                 messageDiv.className = "error";
                 
                 // Scroll to message
