@@ -1,89 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Media Integrated Event Management System</title>
-
-<link rel="stylesheet" href="style.css">
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="script.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Integrated Event Management System</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <header>
+            <h1>🎯 Media Integrated Event Management System</h1>
+        </header>
 
-<h1>Media Integrated Event Management System</h1>
+        <section class="media">
+            <img src="banner.jpg" alt="Event Banner">
+            
+            <video controls preload="metadata">
+                <source src="promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <audio controls preload="metadata">
+                <source src="intro.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+        </section>
 
-<section class="media">
+        <h2>📅 Upcoming Events</h2>
 
-<img src="banner.jpg" alt="Event Banner">
+        <div class="events-container">
+            <div class="event">
+                <h3>Web Development Workshop</h3>
+                <span class="event-date">📆 July 15, 2026</span>
+                
+                <button class="toggleBtn">Show Details</button>
+                
+                <div class="details">
+                    <p>🚀 Join us for an intensive workshop covering HTML, CSS, JavaScript and modern web development frameworks. Perfect for beginners and intermediate developers looking to enhance their skills.</p>
+                    
+                    <button class="registerBtn">Register Now</button>
+                </div>
+            </div>
 
-<video controls>
-<source src="promo.mp4" type="video/mp4">
-</video>
+            <div class="event">
+                <h3>Artificial Intelligence Seminar</h3>
+                <span class="event-date">📆 July 20, 2026</span>
+                
+                <button class="toggleBtn">Show Details</button>
+                
+                <div class="details">
+                    <p>🤖 Explore the fascinating world of Artificial Intelligence and Machine Learning. Learn about cutting-edge technologies, practical applications, and future trends in AI development.</p>
+                    
+                    <button class="registerBtn">Register Now</button>
+                </div>
+            </div>
 
-<audio controls>
-<source src="intro.mp3" type="audio/mpeg">
-</audio>
-
-</section>
-
-
-<h2>Upcoming Events</h2>
-
-
-<div class="event">
-
-<h3>Web Development Workshop</h3>
-<p>Date: July 15</p>
-
-<button class="toggleBtn">Show Details</button>
-
-<div class="details">
-
-<p>Learn HTML, CSS, JavaScript and modern web development.</p>
-
-<button class="registerBtn">Register</button>
-
-</div>
-
-</div>
-
-
-<div class="event">
-
-<h3>Artificial Intelligence Seminar</h3>
-<p>Date: July 20</p>
-
-<button class="toggleBtn">Show Details</button>
-
-<div class="details">
-
-<p>Introduction to AI, Machine Learning and future technologies.</p>
-
-<button class="registerBtn">Register</button>
-
-</div>
-
-</div>
-
-
-<div class="event">
-
-<h3>Startup Networking Event</h3>
-<p>Date: July 25</p>
-
-<button class="toggleBtn">Show Details</button>
-
-<div class="details">
-
-<p>Connect with entrepreneurs, investors and startup founders.</p>
-
-<button class="registerBtn">Register</button>
-
-</div>
-
-</div>
-
+            <div class="event">
+                <h3>Startup Networking Event</h3>
+                <span class="event-date">📆 July 25, 2026</span>
+                
+                <button class="toggleBtn">Show Details</button>
+                
+                <div class="details">
+                    <p>🤝 Connect with like-minded entrepreneurs, investors, and startup founders. Share ideas, find co-founders, and build valuable connections in the startup ecosystem.</p>
+                    
+                    <button class="registerBtn">Register Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

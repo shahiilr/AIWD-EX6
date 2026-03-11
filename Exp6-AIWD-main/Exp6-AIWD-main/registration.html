@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>Event Registration</title>
-
-<link rel="stylesheet" href="style.css">
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="script.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - MEMS</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <header>
+            <h1>📝 Event Registration</h1>
+        </header>
 
-<h2>Event Registration Form</h2>
+        <div class="nav-container">
+            <a href="event.html" class="back-link">Back to Events</a>
+        </div>
 
-<form id="regForm">
+        <div class="form-container">
+            <h2>Registration Form</h2>
 
-<label>Participant Name</label><br>
-<input type="text" id="name"><br>
+            <form id="regForm">
+                <label for="name">👤 Participant Name *</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
 
-<label>Email</label><br>
-<input type="text" id="email"><br>
+                <label for="email">📧 Email Address *</label>
+                <input type="email" id="email" placeholder="your.email@example.com" required>
 
-<label>Event Name</label><br>
-<input type="text" id="eventName" readonly><br>
+                <label for="eventName">🎯 Event Name</label>
+                <input type="text" id="eventName" readonly>
 
-<label>Mobile Number</label><br>
-<input type="text" id="mobile"><br>
+                <label for="mobile">📱 Mobile Number *</label>
+                <input type="tel" id="mobile" placeholder="Enter 10-digit mobile number" required>
 
-<br>
+                <div style="margin-top: 30px;">
+                    <button type="button" id="submitBtn">Submit Registration</button>
+                    <button type="button" id="resetBtn">Reset Form</button>
+                </div>
+            </form>
 
-<button type="button" id="submitBtn">Submit</button>
-<button type="button" id="resetBtn">Reset</button>
-
-</form>
-
-<p id="message"></p>
-
+            <div id="message"></div>
+        </div>
+    </div>
 </body>
 </html>
