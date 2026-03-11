@@ -114,8 +114,12 @@ document.addEventListener('DOMContentLoaded', function(){
             }
             
             if(valid) {
-                // Success
-                messageDiv.innerHTML = "✅ Registration Successful!<br>Welcome, <strong>" + name + "</strong>!";
+                // Success - use textContent to prevent XSS
+                const successText = document.createElement('div');
+                successText.innerHTML = "✅ Registration Successful!<br>Welcome, <strong></strong>!";
+                const strongElement = successText.querySelector('strong');
+                strongElement.textContent = name;
+                messageDiv.innerHTML = successText.innerHTML;
                 messageDiv.className = "success";
                 
                 submitBtn.disabled = true;
